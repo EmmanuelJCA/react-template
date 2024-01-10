@@ -1,8 +1,8 @@
 import { Provider as ReduxProvider } from 'react-redux';
 
 import { store } from './redux/store';
-import ThemeProvider from './Theme';
-import Router from './Router';
+import ThemeProvider from './theme';
+import Router from './router';
 
 // ----------------------------------------------------------------------
 
