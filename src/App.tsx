@@ -1,8 +1,13 @@
-import Router from "./Router";
+import ThemeProvider from './Theme';
+import Router from './Router';
+
+// ----------------------------------------------------------------------
 
 const App = () => {
   return (
-    <Router />
+    <ThemeProvider>
+      <Router />
+    </ThemeProvider>
   )
 };
 
