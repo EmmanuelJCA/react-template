@@ -1,3 +1,6 @@
+import { Provider as ReduxProvider } from 'react-redux';
+
+import { store } from './redux/store';
 import ThemeProvider from './Theme';
 import Router from './Router';
 
@@ -5,9 +8,11 @@ import Router from './Router';
 
 const App = () => {
   return (
-    <ThemeProvider>
-      <Router />
-    </ThemeProvider>
+    <ReduxProvider store={store}>
+      <ThemeProvider>
+        <Router />
+      </ThemeProvider>
+    </ReduxProvider>
   )
 };
 
