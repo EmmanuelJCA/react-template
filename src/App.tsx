@@ -1,4 +1,5 @@
 import { Provider as ReduxProvider } from 'react-redux';
+import { SnackbarProvider } from 'notistack';
 
 import { store } from './redux/store';
 import ThemeProvider from './theme';
@@ -10,7 +11,9 @@ const App = () => {
   return (
     <ReduxProvider store={store}>
       <ThemeProvider>
-        <Router />
+        <SnackbarProvider>
+          <Router />
+        </SnackbarProvider>
       </ThemeProvider>
     </ReduxProvider>
   )
