@@ -1,10 +1,14 @@
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 import { configureStore } from '@reduxjs/toolkit';
 
+import { api } from './services';
+
 // ----------------------------------------------------------------------
 
 export const store = configureStore({
-  reducer: {},
+  reducer: {
+    [api.reducerPath]: api.reducer,
+  },
   devTools: true,
 });
 
