@@ -1,11 +1,12 @@
 import { useRoutes } from 'react-router-dom';
 
-import { ErrorRoutes, MainRoutes } from './routes';
+import { AuthRoutes, ErrorRoutes, MainRoutes } from './routes';
 
 // ----------------------------------------------------------------------
 
 const Router = () => {
   const routes = useRoutes([
+    AuthRoutes,
     MainRoutes,
     ErrorRoutes,
   ]);
