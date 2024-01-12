@@ -16,7 +16,7 @@ const App = () => {
         </SnackbarProvider>
       </ThemeProvider>
     </ReduxProvider>
-  )
-};
+  );
+}
 
 export default App;
