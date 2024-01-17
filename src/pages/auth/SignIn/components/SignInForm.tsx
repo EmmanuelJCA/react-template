@@ -1,23 +1,32 @@
 import { Stack, TextField, Button, Link, Box } from '@mui/material';
+import { useDispatch } from 'react-redux';
 import { useForm } from 'react-hook-form';
 
+import { setUser, useSignInMutation } from '@/redux/features/auth';
+import { setLocalStorageItem, httpErrorHandler } from '@/utils';
 import { useRouter } from '@/router/hooks';
+import type { SignIn } from '@/types';
 
 // ----------------------------------------------------------------------
 
-interface Form {
-  email: string;
-  password: string;
-}
-
 const SignInForm = () => {
+  const dispatch = useDispatch();
   const router = useRouter();
 
-  const { register, handleSubmit, formState: { errors } } = useForm<Form>();
+  const { register, handleSubmit, formState: { errors } } = useForm<SignIn>();
+  const [ signInApi, { isLoading } ] = useSignInMutation();
 
-  const signIn = (credentials: Form) => {
-    console.log(credentials);
-    router.push('/');
+  const signIn = async(credentials: SignIn) => {
+    try {
+      const { user, token } = await signInApi(credentials).unwrap();
+      setLocalStorageItem('token', token.accessToken);
+      dispatch(setUser(user));
+      router.push('/');
+    } catch (error) {
+      httpErrorHandler(error, { 
+        NOT_FOUND: 'Email or password is incorrect' 
+      });
+    }
   };
 
   return (
@@ -65,6 +74,7 @@ const SignInForm = () => {
         type="submit"
         variant="contained"
         color="inherit"
+        disabled={ isLoading }
       >
         Login
       </Button>
