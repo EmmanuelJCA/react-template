@@ -5,13 +5,6 @@ import { getLocalStorageItem, removeLocalStorageItem } from '@/utils';
 
 // ----------------------------------------------------------------------
 
-interface ApiError {
-  status:  number;
-  detail:  string;
-  title:   string;
-  message: string;
-}
-
 const token = getLocalStorageItem<string>('token');
 
 const showSnackbar = (message: string, onClose?: () => void) => {
@@ -44,22 +37,19 @@ const baseQueryWithErrorHandler: BaseQueryFn<
   const result = await baseQuery(args, api, extraOptions);
   
   if (result.error) {
-    const err = result.error.data as ApiError;
-
     switch (result.error.status) {
       case 401:
         if(!token) break; 
-        showSnackbar('Su sesión ha expirado, por favor ingrese nuevamente', () => {
+        showSnackbar('Por favor ingrese nuevamente para continuar', () => {
           removeLocalStorageItem('token');
           api.dispatch({ type: 'auth/logOut' });
         });
         break;
-      case 403:
-        showSnackbar('No posee permisos para realizar esta acción');
+      case 500:
+        showSnackbar('Ha ocurrido un error inesperado, por favor intente nuevamente');
         break;
-      default: {
-        showSnackbar(err.message);
-      }
+      default: 
+        break;
     }
   }
   
