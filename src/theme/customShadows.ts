@@ -1,7 +1,7 @@
 import { alpha } from '@mui/material/styles';
 
-import { grey, info, error, common, primary, success, warning, secondary } from './palette';
 import { CustomShadows } from './types/customShadows';
+import { grey, info, error, common, primary, success, warning, secondary } from './palette';
 
 // ----------------------------------------------------------------------
 

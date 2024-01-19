@@ -1,4 +1,4 @@
-import { Components, Theme, alpha } from '@mui/material/styles';
+import { Theme, alpha, Components } from '@mui/material/styles';
 import { outlinedInputClasses } from '@mui/material/OutlinedInput';
 
 // ----------------------------------------------------------------------

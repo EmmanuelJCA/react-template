@@ -1,17 +1,13 @@
 import { useRoutes } from 'react-router-dom';
 
-import { AuthRoutes, ErrorRoutes, MainRoutes } from './routes';
+import { AuthRoutes, MainRoutes, ErrorRoutes } from './routes';
 
 // ----------------------------------------------------------------------
 
 const Router = () => {
-  const routes = useRoutes([
-    AuthRoutes,
-    MainRoutes,
-    ErrorRoutes,
-  ]);
+  const routes = useRoutes([AuthRoutes, MainRoutes, ErrorRoutes]);
 
   return routes;
-}
+};
 
 export default Router;

@@ -18,5 +18,5 @@ root.render(
         </Suspense>
       </BrowserRouter>
     </HelmetProvider>
-  </React.StrictMode>,
+  </React.StrictMode>
 );

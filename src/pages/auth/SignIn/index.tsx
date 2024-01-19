@@ -13,7 +13,7 @@ const SignInPage = () => {
 
       <SignInView />
     </>
-  )
-}
+  );
+};
 
 export default SignInPage;

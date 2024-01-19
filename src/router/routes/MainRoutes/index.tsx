@@ -1,14 +1,14 @@
-import { Suspense, lazy } from 'react';
+import { lazy, Suspense } from 'react';
 import { Outlet, RouteObject } from 'react-router-dom';
 
-import { RequireAuth } from '@/router/components';
 import MainLayout from '@/layouts/Main';
+import { RequireAuth } from '@/router/components';
 
 // ----------------------------------------------------------------------
 
 export const HomePage = lazy(() => import('@/pages/Home'));
 
-const MainRoutes: RouteObject =  {
+const MainRoutes: RouteObject = {
   path: '/',
   element: (
     <RequireAuth>
@@ -25,6 +25,6 @@ const MainRoutes: RouteObject =  {
       element: <HomePage />,
     },
   ],
-}
+};
 
 export default MainRoutes;

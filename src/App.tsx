@@ -1,9 +1,9 @@
-import { Provider as ReduxProvider } from 'react-redux';
 import { SnackbarProvider } from 'notistack';
+import { Provider as ReduxProvider } from 'react-redux';
 
-import { store } from './redux/store';
-import ThemeProvider from './theme';
 import Router from './router';
+import ThemeProvider from './theme';
+import { store } from './redux/store';
 
 // ----------------------------------------------------------------------
 
@@ -17,6 +17,6 @@ const App = () => {
       </ThemeProvider>
     </ReduxProvider>
   );
-}
+};
 
 export default App;

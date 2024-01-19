@@ -1,6 +1,6 @@
 import { FC, useMemo } from 'react';
 import CssBaseline from '@mui/material/CssBaseline';
-import { createTheme, ThemeProvider as MUIThemeProvider, ThemeOptions } from '@mui/material/styles';
+import { createTheme, ThemeOptions, ThemeProvider as MUIThemeProvider } from '@mui/material/styles';
 
 import { palette } from './palette';
 import { shadows } from './shadows';
@@ -14,7 +14,7 @@ interface Props {
   children: React.ReactNode;
 }
 
-const ThemeProvider:FC<Props> = ({ children }) => {
+const ThemeProvider: FC<Props> = ({ children }) => {
   const memoizedValue = useMemo<ThemeOptions>(
     () => ({
       palette: palette(),
@@ -36,6 +36,6 @@ const ThemeProvider:FC<Props> = ({ children }) => {
       {children}
     </MUIThemeProvider>
   );
-}
+};
 
 export default ThemeProvider;

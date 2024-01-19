@@ -3,16 +3,16 @@ import { User } from './user';
 // ----------------------------------------------------------------------
 
 export interface SignIn {
-  email:    string;
+  email: string;
   password: string;
 }
 
 export interface AuthenticatedUser {
-  user:  User;
+  user: User;
   token: Token;
 }
 
 export interface Token {
-  expiresIn:   number;
+  expiresIn: number;
   accessToken: string;
 }

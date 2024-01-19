@@ -1,4 +1,4 @@
-import { PaletteOptions, alpha } from '@mui/material/styles';
+import { alpha, PaletteOptions } from '@mui/material/styles';
 
 // ----------------------------------------------------------------------
 

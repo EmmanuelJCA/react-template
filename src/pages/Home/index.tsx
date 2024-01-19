@@ -14,6 +14,6 @@ const HomePage = () => {
       <HomeView />
     </>
   );
-}
+};
 
 export default HomePage;

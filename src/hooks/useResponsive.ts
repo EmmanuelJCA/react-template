@@ -1,5 +1,5 @@
-import { Breakpoint, useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
+import { useTheme, Breakpoint } from '@mui/material/styles';
 
 // ----------------------------------------------------------------------
 
@@ -27,7 +27,7 @@ export const useResponsive = (query: string, start: Breakpoint, end: Breakpoint)
   }
 
   return mediaOnly;
-}
+};
 
 // ----------------------------------------------------------------------
 
@@ -44,4 +44,4 @@ export const useWidth = () => {
       return !output && matches ? key : output;
     }) || 'xs'
   );
-}
+};

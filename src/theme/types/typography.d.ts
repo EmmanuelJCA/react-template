@@ -1,4 +1,7 @@
-import { Typography as MuiTypography, TypographyOptions as MuiTypographyOptions } from '@mui/material/styles/createTypography';
+import {
+  Typography as MuiTypography,
+  TypographyOptions as MuiTypographyOptions,
+} from '@mui/material/styles/createTypography';
 
 declare module '@mui/material/styles/createTypography' {
   interface Typography extends MuiTypography {

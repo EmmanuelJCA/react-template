@@ -77,12 +77,7 @@ interface BgBlurProps {
 }
 
 export function bgBlur(props: BgBlurProps) {
-  const { 
-    color = '#000000',
-    blur = 6,
-    opacity = 0.8, 
-    imgUrl
-  } = props
+  const { color = '#000000', blur = 6, opacity = 0.8, imgUrl } = props;
 
   if (imgUrl) {
     return {
@@ -121,13 +116,7 @@ interface BgGradientProps {
 }
 
 export function bgGradient(props: BgGradientProps) {
-  const {
-    direction = 'to bottom',
-    startColor,
-    endColor,
-    imgUrl,
-    color
-  } = props;
+  const { direction = 'to bottom', startColor, endColor, imgUrl, color } = props;
 
   if (imgUrl) {
     return {

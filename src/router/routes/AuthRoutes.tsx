@@ -1,11 +1,11 @@
-import { Suspense, lazy } from 'react';
+import { lazy, Suspense } from 'react';
 import { Outlet, RouteObject } from 'react-router-dom';
 
 // ----------------------------------------------------------------------
 
 export const SignInPage = lazy(() => import('@/pages/auth/SignIn'));
 
-const AuthRoutes: RouteObject =  {
+const AuthRoutes: RouteObject = {
   path: 'auth',
   element: (
     <Suspense>
@@ -18,6 +18,6 @@ const AuthRoutes: RouteObject =  {
       element: <SignInPage />,
     },
   ],
-}
+};
 
 export default AuthRoutes;

@@ -1,4 +1,4 @@
-import { PayloadAction, createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 import type { User } from '@/types';
 
@@ -25,7 +25,4 @@ const authSlice = createSlice({
 
 export default authSlice.reducer;
 
-export const {
-  setUser,
-  logOut,
-} = authSlice.actions;
+export const { setUser, logOut } = authSlice.actions;
