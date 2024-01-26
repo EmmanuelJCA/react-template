@@ -2,7 +2,6 @@ import { alpha, useTheme } from '@mui/material/styles';
 import { Box, Card, Link, Stack, Typography } from '@mui/material';
 
 import { bgGradient } from '@/theme/css';
-
 import { SignInForm } from '../components';
 
 // ----------------------------------------------------------------------

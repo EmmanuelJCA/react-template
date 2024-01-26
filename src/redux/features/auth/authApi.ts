@@ -1,7 +1,6 @@
+import { setUser } from './';
 import { api } from '@/redux/services/api';
 import type { User, SignIn, AuthenticatedUser } from '@/types';
-
-import { setUser } from './';
 
 // ----------------------------------------------------------------------
 
